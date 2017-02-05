@@ -40,3 +40,8 @@ group :test, :development do
   gem "sqlite3"
   gem "faker"
 end
+
+group :production do
+  # Improve Rails logging and log JSON-formatted messages to stdout.
+  gem 'rails_12factor'
+end
