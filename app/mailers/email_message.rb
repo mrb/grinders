@@ -1,6 +1,6 @@
 class EmailMessage < ActionMailer::Base
   default :from => "#{Rails.application.name} " <<
-    "<nobody@#{Rails.application.domain}>"
+    "<hello@#{Rails.application.domain}>"
 
   def notify(message, user)
     @message = message
