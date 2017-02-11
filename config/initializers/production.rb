@@ -1,10 +1,10 @@
 class << Rails.application
     def domain
-      "grinde.rs"
+      "news.reifyworks.com"
     end
 
     def name
-      "Grinders"
+      "Market News"
     end
   end
 
