@@ -1,6 +1,6 @@
 class << Rails.application
     def domain
-      "marketnews.herokuapp.com"
+      "reifyworks.com"
     end
 
     def name
