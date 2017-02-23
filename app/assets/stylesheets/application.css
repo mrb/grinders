@@ -14,7 +14,7 @@ html {
 }
 
 body, textarea, input, button {
-	font-family: "helvetica neue", arial, sans-serif;
+	font-family: "Georgia", times, serif;
 	font-size: 10pt;
 	color: #333;
 }
@@ -1286,7 +1286,7 @@ div.fieldWithErrors {
 	border-radius: 3px;
 	color: #333;
 	display: inline-block;
-	font: 11px/18px "Helvetica Neue",Arial,sans-serif;
+	font: 11px/18px "Georgia",Times,serif;
 	font-weight: bold;
 	cursor: pointer;
 	height: 22px;
