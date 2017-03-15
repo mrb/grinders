@@ -39,6 +39,7 @@
       title="<%= @comments_rss_link[:title] %>"
       href="<%= @comments_rss_link[:href] %>" />
   <% end %>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
 </head>
 <body>
   <div id="wrapper">
@@ -50,7 +51,6 @@
 
         <% links = {
           "/" => @cur_url == "/" ? Rails.application.name : t('.homelink'),
-          "/recent" => t('.recentlink'),
           "/comments" => t('.commentslink')
         } %>
 
@@ -58,8 +58,6 @@
           <% links.merge!({ "/threads" => t('.yourthreadslink'),
             "/stories/new" => t('.submitstorylink') }) %>
         <% end %>
-
-        <% links.merge!({ "/search" => t('.searchlink') }) %>
 
         <% if @cur_url.present? && !links.keys.include?(@cur_url) &&
         @heading.present? %>
@@ -78,8 +76,6 @@
 
       <div id="headerright">
         <span class="headerlinks">
-        <a href="/filters" <%= @cur_url == "/filters" ?
-          raw("class=\"cur_url\"") : "" %>><%= t('.filterslink') %></a>
         <% if @user %>
           <% if (count = @user.unread_message_count) > 0 %>
             <a href="/messages" class="new_messages <%= @cur_url == "/messages" ?
