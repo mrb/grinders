@@ -15,7 +15,7 @@
       <meta name="<%= k %>" content="<%= v %>" />
     <% end %>
   <% end %>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <%= favicon_link_tag %>
   <% if @short_url %>
     <link rev="canonical" rel="self alternate shorter shorturl shortlink"
       href="<%= @short_url %>" />
@@ -45,9 +45,7 @@
   <div id="wrapper">
     <div id="header">
       <div id="headerleft">
-        <a id="l_holder" style="background-color: #<%= @traffic_color %>;"
-          href="/" title="<%= Rails.application.name %> (Current traffic: <%=
-          @traffic.to_i %>)"></a>
+        <a id="l_holder" style="background-color: #fef200;" href="http://reifyworks.com"><%= image_tag "R.png", {width: 16} %></a>
 
         <% links = {
           "/" => @cur_url == "/" ? Rails.application.name : t('.homelink'),
