@@ -14,9 +14,9 @@ the B2B SaaS market. We hope you enjoy!
     begin
       i.save!
       i.send_email
-      render :json => {:message => "Success!"}
+      render :json => {:message => "Success!"}, status: 200
     rescue
-      render :json => {:message => "Invalid email"}
+      render :json => {:message => "Invalid email"}, status: 500
     end
   end
 
