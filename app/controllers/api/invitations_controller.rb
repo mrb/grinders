@@ -1,14 +1,14 @@
 class Api::InvitationsController < ActionController::Base
-  before_filter :validate_pass_and_user
+  before_filter :validate_pass_and_user, :extract_drip_email
 
   def create
     i = Invitation.new
     i.user_id = @user.id
-    i.email = params[:email]
+    i.email = @email
     i.memo = <<-EOF
-      Welcome to Market News! You're receiving this invitation because you signed up for the
-      Reify mailing list. We maintain Market News as a hub for resources and conversation in
-      the B2B SaaS market. We hope you enjoy!
+Welcome to Market News! You're receiving this invitation because you signed up for the
+Reify mailing list. We maintain Market News as a hub for resources and conversation in
+the B2B SaaS market. We hope you enjoy!
     EOF
 
     begin
@@ -30,6 +30,14 @@ class Api::InvitationsController < ActionController::Base
       end
     else
       render json: {}, status: 403
+    end
+  end
+
+  def extract_drip_email
+    if event = JSON.parse(request.body.read, symbolize_names: true)
+      @email = event[:data][:subscriber][:email]
+    else
+      render json: {}, status: 404
     end
   end
 end
