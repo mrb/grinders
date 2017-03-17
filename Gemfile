@@ -39,6 +39,7 @@ group :test, :development do
   gem "machinist"
   gem "sqlite3"
   gem "faker"
+  gem "pry"
 end
 
 group :production do

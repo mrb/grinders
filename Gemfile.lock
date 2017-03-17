@@ -32,6 +32,7 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     builder (3.2.2)
+    coderay (1.1.1)
     diff-lcs (1.2.5)
     dynamic_form (1.1.4)
     erubis (2.7.0)
@@ -54,6 +55,7 @@ GEM
     machinist (2.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     middleware (0.1.0)
     mime-types (2.6.1)
     mini_portile (0.5.3)
@@ -62,6 +64,10 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -104,6 +110,7 @@ GEM
       rspec-core (~> 2.99.0)
       rspec-expectations (~> 2.99.0)
       rspec-mocks (~> 2.99.0)
+    slop (3.6.0)
     sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.2)
@@ -146,6 +153,7 @@ DEPENDENCIES
   mysql2 (>= 0.3.14)
   nokogiri (= 1.6.1)
   oauth
+  pry
   rails (= 4.1.12)
   rails_12factor
   rdiscount

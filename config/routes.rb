@@ -144,6 +144,10 @@ Lobsters::Application.routes.draw do
     get "/about" => "home#about"
     get "/chat" => "home#chat"
 
+    namespace :api do
+      post "/invitations" => "invitations#create"
+    end
+
     if defined?(BbsController) || Rails.env.development?
       get "/bbs" => "bbs#index"
     end
